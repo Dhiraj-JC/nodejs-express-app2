@@ -1,12 +1,15 @@
 const express = require('express');
 const mongo = require('mongodb').MongoClient;
 const dotenv = require('dotenv');
+const cors = require('cors');
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
-const url = process.env.MONGODB_CONNECTION_STRING;
+
+const url = "mongodb+srv://admin1:admin123@myfirstcluster.5eifpgf.mongodb.net/?retryWrites=true&w=majority";
 
 let db;
 let students;
